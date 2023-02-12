@@ -1,0 +1,808 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
+
+@include-when-export url(https://fonts.loli.net/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
+
+/* =========== */
+
+/* pt-serif-regular - latin */
+/* pt-serif-italic - latin */
+/* pt-serif-700 - latin */
+/* pt-serif-700italic - latin */
+:root {
+	--active-file-bg-color: #dadada;
+	--active-file-bg-color: rgba(32, 43, 51, 0.63);
+	--active-file-text-color: white;
+	--bg-color: #f3f2ee;
+	--text-color: #1f0909;
+	--control-text-color: #444;
+	--rawblock-edit-panel-bd: #e5e5e5;
+
+	--select-text-bg-color: rgba(32, 43, 51, 0.63);
+  --select-text-font-color: white;
+}
+
+pre {
+	--select-text-bg-color: #36284e;
+	--select-text-font-color: #fff;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	background-color: #f3f2ee;
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+	color: #1f0909;
+	line-height: 1.5em;
+}
+
+/*#write {
+	overflow-x: auto;
+    max-width: initial;
+	padding-left: calc(50% - 17em);
+    padding-right: calc(50% - 17em);
+}
+
+@media (max-width: 36em) {
+ 	#write {
+ 		padding-left: 1em;
+    	padding-right: 1em;
+ 	}
+}*/
+
+#write {
+	max-width: 40em;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+			max-width: 914px;
+	}
+}
+
+ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* styles */
+
+/* ====== */
+
+/* headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+h1 {
+	font-size: 1.875em;
+	/*30 / 16*/
+	line-height: 1.6em;
+	/* 48 / 30*/
+	margin-top: 2em;
+}
+h2,
+h3 {
+	font-size: 1.3125em;
+	/*21 / 16*/
+	line-height: 1.15;
+	/*24 / 21*/
+	margin-top: 2.285714em;
+	/*48 / 21*/
+	margin-bottom: 1.15em;
+	/*24 / 21*/
+}
+h3 {
+	font-weight: normal;
+}
+h4 {
+	font-size: 1.125em;
+	/*18 / 16*/
+	margin-top: 2.67em;
+	/*48 / 18*/
+}
+h5,
+h6 {
+	font-size: 1em;
+	/*16*/
+}
+h1 {
+	border-bottom: 1px solid;
+	margin-bottom: 1.875em;
+	padding-bottom: 0.8125em;
+}
+/* links */
+
+a {
+	text-decoration: none;
+	color: #065588;
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+}
+/* block spacing */
+
+p,
+blockquote,
+.md-fences {
+	margin-bottom: 1.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 1.5em;
+}
+/* blockquote */
+
+blockquote {
+	font-style: italic;
+	border-left: 5px solid;
+	margin-left: 2em;
+	padding-left: 1em;
+}
+/* lists */
+
+ul,
+ol {
+	margin: 0 0 1.5em 1.5em;
+}
+/* tables */
+.md-meta,.md-before, .md-after {
+	color:#999;
+}
+
+table {
+	margin-bottom: 1.5em;
+	/*24 / 16*/
+	font-size: 1em;
+	/* width: 100%; */
+}
+thead th,
+tfoot th {
+	padding: .25em .25em .25em .4em;
+	text-transform: uppercase;
+}
+th {
+	text-align: left;
+}
+td {
+	vertical-align: top;
+	padding: .25em .25em .25em .4em;
+}
+
+code,
+.md-fences {
+	background-color: #dadada;
+}
+
+code {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.md-fences {
+	margin-left: 2em;
+	margin-bottom: 3em;
+	padding-left: 1ch;
+	padding-right: 1ch;
+}
+
+pre,
+code,
+tt {
+	font-size: .875em;
+	line-height: 1.714285em;
+}
+/* some fixes */
+
+h1 {
+	line-height: 1.3em;
+	font-weight: normal;
+	margin-bottom: 0.5em;
+}
+
+p + ul,
+p + ol{
+	margin-top: .5em;
+}
+
+h3 + ul,
+h4 + ul,
+h5 + ul,
+h6 + ul,
+h3 + ol,
+h4 + ol,
+h5 + ol,
+h6 + ol {
+	margin-top: .5em;
+}
+
+li > ul,
+li > ol {
+	margin-top: inherit;
+	margin-bottom: 0;
+}
+
+li ol>li {
+	list-style-type: lower-alpha;
+}
+
+li li ol>li{
+	list-style-type: lower-roman;
+}
+
+h2,
+h3 {
+	margin-bottom: .75em;
+}
+hr {
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid;
+	border-left: none;
+}
+h1 {
+	border-color: #c5c5c5;
+}
+blockquote {
+	border-color: #bababa;
+	color: #656565;
+}
+
+blockquote ul,
+blockquote ol {
+	margin-left:0;
+}
+
+.ty-table-edit {
+	background-color: transparent;
+}
+thead {
+	background-color: #dadada;
+}
+tr:nth-child(even) {
+	background: #e8e7e7;
+}
+hr {
+	border-color: #c5c5c5;
+}
+.task-list{
+	padding-left: 1rem;
+}
+
+.md-task-list-item {
+	padding-left: 1.5rem;
+	list-style-type: none;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.25rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #F3F2EE;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+
+#write pre.md-meta-block {
+	min-height: 1.875rem;
+	color: #555;
+	border: 0px;
+	background: transparent;
+	margin-top: -4px;
+	margin-left: 1em;
+	margin-top: 1em;
+}
+
+.md-image>.md-meta {
+	color: #9B5146;
+}
+
+.md-image>.md-meta{
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
+}
+
+
+#write>h3.md-focus:before{
+	left: -1.5rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h4.md-focus:before{
+	left: -1.5rem;
+	top: .25rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h5.md-focus:before{
+	left: -1.5rem;
+	top: .0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+#write>h6.md-focus:before{
+	left: -1.5rem;
+	top: 0.3125rem;
+	color:#999;
+	border-color:#999;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+.md-toc-content:empty:before{
+	color: #065588;
+}
+.md-toc-item {
+	color: #065588;
+}
+#write div.md-toc-tooltip {
+	background-color: #f3f2ee;
+}
+
+#typora-sidebar {
+	background-color: #f3f2ee;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
+}
+
+.pin-outline #typora-sidebar {
+	background: inherit;
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+.pin-outline #typora-sidebar:hover .outline-title-wrapper {
+	border-left:1px dashed;
+}
+
+.outline-item:hover {
+  background-color: #dadada;
+  border-left: 28px solid #dadada;
+  border-right: 18px solid #dadada;
+}
+
+.typora-node .outline-item:hover {
+  	border-right: 28px solid #dadada;
+}
+
+.outline-expander:before {
+  content: "\f0da";
+  font-family: FontAwesome;
+  font-size:14px;
+  top: 1px;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  content: "\f0d7";
+}
+
+.modal-content {
+	background-color: #f3f2ee;
+}
+
+.auto-suggest-container ul li {
+	list-style-type: none;
+}
+
+/** UI for electron */
+
+.megamenu-menu,
+#top-titlebar, #top-titlebar *,
+.megamenu-content {
+	background: #f3f2ee;
+	color: #1f0909;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px dashed #202B33;
+}
+
+.megamenu-menu {
+	box-shadow: none;
+	border-right: 1px dashed;
+}
+
+header, .context-menu, .megamenu-content, footer {
+	font-family: "PT Serif", 'Times New Roman', Times, serif;
+    color: #1f0909;
+}
+
+#megamenu-back-btn {
+	color: #1f0909;
+	border-color: #1f0909;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: #1f0909;
+}
+
+.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
+	color: inherit;
+	background-color: #e8e7df;
+}
+
+.long-btn:hover {
+	background-color: #e8e7df;
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: transparent !important;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+	background-color: #D2D1D1;
+}
+
+.btn-default {
+	background-color: transparent;
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+.ty-show-word-count #footer-word-count {
+	background: #c7c5c5;
+}
+
+#typora-quick-open {
+    background-color: inherit;
+}
+
+.md-diagram-panel {
+	margin-top: 8px;
+}
+
+.file-list-item-file-name {
+	font-weight: initial;
+}
+
+.file-list-item-summary {
+	opacity: 1;
+}
+
+.file-list-item {
+	color: #777;
+}
+
+.file-list-item.active {
+	background-color: inherit;
+	color: black;
+}
+
+.ty-side-sort-btn.active {
+	background-color: inherit;
+}
+
+.file-list-item.active .file-list-item-file-name  {
+	font-weight: bold;
+}
+
+.file-list-item{
+    opacity:1 !important;
+}
+
+.file-library-node.active>.file-node-background{
+	background-color: rgba(32, 43, 51, 0.63);
+	background-color: var(--active-file-bg-color);
+}
+
+.file-tree-node.active>.file-node-content{
+	color: white;
+	color: var(--active-file-text-color);
+}
+
+.md-task-list-item>input {
+	margin-left: -1.7em;
+	margin-top: calc(1rem - 12px);
+	-webkit-appearance: button;
+}
+
+input {
+	border: 1px solid #aaa;
+}
+
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header:hover, 
+.megamenu-menu-header:focus {
+	color: inherit;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+	opacity: 1;
+}
+
+/* https://github.com/typora/typora-issues/issues/2046 */
+.os-windows-7 strong,
+.os-windows-7 strong  {
+	font-weight: 760;
+}
+
+.ty-preferences .btn-default {
+	background: transparent;
+}
+
+.ty-preferences .window-header {
+	border-bottom: 1px dashed #202B33;
+	box-shadow: none;
+}
+
+#sidebar-loading-template, #sidebar-loading-template.file-list-item {
+	color: #777;
+}
+
+.searchpanel-search-option-btn.active {
+	background: #777;
+	color: white;
+}
+
+.export-detail, .light .export-detail, 
+.light .export-item.active, 
+.light .export-items-list-control {
+	background: #e0e0e0;
+	border-radius: 2px;
+	font-weight: 700;
+	color: inherit
+}
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>7-langs-in-12-months</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='i-learned-7-different-programming-languages----so-you-dont-have-to'><span>I learned 7 different programming languages -- so you don&#39;t have to</span></h1><p><span>I began last year with a goal to </span><em><span>really</span></em><span> understand machine learning. I feel utterly lucky to be alive at a time when software is taking its first tentative steps into the realm of intelligence, and I want front row seats to this historic event. Once this has occurred, computers will speak my language. But to see it unfold, I must learn to speak theirs...</span></p><p><span>By way of background, I haven&#39;t programmed professionally since the late 90s. My language of choice at that time is too embarrassing to admit (hint, initials  VB). Since then, I&#39;ve been mostly busy helping early stage start-ups get funded. So what follows is an &quot;outsider&#39;s&quot; inside perspective on the </span><em><span>very best</span></em><span> programming language. </span></p><p><span>Yes, fighting words! Let&#39;s begin. </span></p><h2 id='python'><span>Python </span></h2><p><span>Of course, my first stop was Python. This is the language I would teach my kids first. I love that it reads like pseudo-code and it allows you to think big picture about the problem you&#39;re trying to solve. It&#39;s the lingua franca of data science, so I expected my journey to stop here. </span></p><p><span>But Python is slow. And being slow, it requires libraries written in C to do anything as performance-critical as machine learning. And with that , you lose Python&#39;s best parts. It no longer reads like English. Code that would naturally be written as a loop must instead become a &quot;tensor manipulation&quot;. Get ready to write a lot of comments.</span></p><p><span>Also, I wasn&#39;t </span><em><span>truly</span></em><span> understanding machine learning with Python. It was a string of incantations...import this module, paste in some torchured API calls, and behold... digits deciphered! I needed to see the guts.</span></p><p><span>I did take Jeremy Howard&#39;s </span><a href='https://www.fast.ai/posts/part2-2022.html'><span>excellent course</span></a><span> which aims to teach building Stable Diffusion from scratch with Python. That seemed perfect. But I found, while I could readily nod my head watching Jeremy walk through the code, that wasn&#39;t enough for me to </span><em><span>really</span></em><span> understand. I decided I would need to re-implement it from scratch and &quot;without peeking&quot;. But to see what to implement, I had to peek. Hm. I know, I&#39;ll re-write it in a different language!</span></p><h2 id='rust'><span>Rust</span></h2><p><span>Enter Rust. Rust is what all the cool kids are learning. It&#39;s been voted the &quot;most loved&quot; language by programmers for many years. Surely, I should learn this one. But it would be a lot to learn a new language together with machine learning at the same. So I took a step back and decided to learn just Rust, by re-implementing something I&#39;d already written once in Python. </span></p><h3 id='sidebar-the-best-way-to-learn-a-language'><span>Sidebar: The best way to learn a language</span></h3><p><span>I really like this approach and I highly recommend it. Take something moderately complex that you&#39;ve already written, then re-write it in the language you&#39;re learning. Having done this seven times, I wouldn&#39;t try it again any other way. Just spend a half-day browsing some &quot;quick start&quot; intros for general familiarity. Then dive in and make something. You can look up the rest as you go. </span></p><p><span>My Rosetta Stone project of choice for this is a Yahtzee bot. In the dice game of solo Yahtzee, there is a &quot;statistically correct&quot; choice for every possible situation -- about a billion of them. A program that prints the expected value of a player&#39;s initial choice, must first calculate the same for all billion+ possibilities that follow. Spoiler: it&#39;s 254. But a naive Python program to calculate that runs for about 50 days.</span></p><p><span>I found this challenge to be great for test-driving the capabilities of a new language. At about 1000 lines of code, it&#39;s just complex enough to require some custom data types and some care with performance. There&#39;s a correct result that you only see once it&#39;s done right. And with some extra cleverness, it can be made to finish in minutes instead of days.</span></p><p><span>Doing this, I&#39;ve found that I can learn a new language to a level of basic proficiency in 2 or 3 weeks (not including time spent on my &quot;day job&quot;). I would compare that to 2 or 3 months it takes to fully read some programming tome from Amazon. Plus reading only gives you a surface awareness -- like recognizing a human language but not speaking it yourself. Stop reading and start coding. Make something.</span></p><h2 id='back-to-rust'><span>Back to Rust </span></h2><p><span>So what&#39;s up with Rust? Well, I can&#39;t say it&#39;s my &quot;most loved&quot;. </span></p><p><span>It taught me appreciation for low level implementation details I&#39;d never had to think about before. But I didn&#39;t really want to think about those things. For example, Rust made me responsible for managing &quot;lifetimes&quot; of my variables by way of noisy annotations. I was used to languages that take care of this logistical plumbing for me. It&#39;d be nice to &quot;opt-in&quot; to that level of control when it&#39;s needed, but Rust always needs it. </span></p><p><span>I will say there&#39;s a certain satisfaction every time I got new code to compile in Rust. It feels like solving a puzzle. And a bonus, the strict rules of Rust allow my IDE to highlight errors as I go. When your Python program runs, you don&#39;t really know it&#39;s correct until you&#39;ve tested every code path. </span></p><p><span>But Rust is pedantic in other ways which takes that a bit too far for my taste. There is so much defensive error checking and/or value &quot;unwrapping&quot;. It&#39;s hard to tease all that apart from the core of a programmer&#39;s intent. My brain has a &quot;complexity limit&quot;, and if I&#39;m using some of that up to parse through the plumbing, it shrinks the limit of &quot;problem complexity&quot; I can tackle. </span></p><p><span>Rust does have some nice abstractions that other low-level programming languages lack. You can write a Python-like list comprehension with no speed penalty. It has conveniences for multithreading via some good libraries and macros. </span></p><p><span>But with Rust, I&#39;d say most programmer convenience is sacrificed on the altar of &quot;never crash&quot;. This makes it a good choice for sending a rocket to space, but not so much for exploratory data science. It also isn&#39;t really a great choice for a website backend, or a game, or a GUI desktop app. It wouldn&#39;t shine in those cases, and (consequently?) there are no really mature libraries in those areas. </span></p><p><span>Lastly, I had hoped to write GPU code in Rust, but sadly it doesn&#39;t do this.</span></p><p><span>By the end of my journey with Rust, I&#39;d made my Yahtzeebot run in 10 minutes with the help of some multithreading and SIMD magic. Much of that speed is due to the low level nature of Rust, but also from making me use a different approach. The Python code felt like an elegant fit to the shape of the problem as it lived in my mind. The Rust code felt like a translation that catered more to the needs of the machine, but with pretty great performance as the payoff.  </span></p><h2 id='julia'><span>Julia</span></h2><p><span>The tradeoff I experienced with Rust left me wondering if there was a way to have the best of both worlds. Maybe Julia? </span></p><p><span>Julia is beautiful. For anyone who finds curly braces to be noisy, Julia compares well to Python for pure aesthetics. Julia&#39;s loops are fast, so you&#39;re not forced to turn everything into a tensor. But you can also natively do math on arrays with broadcasting whenever that approach is cleaner.</span></p><p><span>With Julia, I managed to get the Yahtzeebot down to just 3.38 minutes. I mean, wow. </span></p><p><span>This is an example of where tooling makes a difference. Julia and Rust both compile via LLVM, so I could probably go back and make the Rust version run just as fast. But I couldn&#39;t readily iterate on performance improvements with Rust because I had to keep switching over to a Windows machine where I could use a good line-by-line profiler which didn&#39;t exist for Rust on a Mac. With Julia&#39;s tooling, each line of code had a visual indicator of its performance hit right there in my editor with VSCode. I could also launch a REPL there and test out freshly written functions interactively. That was a great workflow and worked well for most changes.  </span></p><p><span>In machine learning, the GPU is an essential ingredient, and Julia appealingly lets me write GPU code in the </span><em><span>same language</span></em><span> as the high level &quot;glue&quot; code. </span></p><p><span>Things that require a lot of fiddling and ceremony in other languages -- like multithreading and SIMD -- become a matter of dropping a single-word macro in front of my loop. Similarly, I can just prefix array access with </span><code>@inbounds</code><span> when I need speed over safety. </span></p><p><span>So, Julia for the win? </span></p><p><span>Sadly, no. </span></p><p><span>But, so close! </span></p><p><span>I&#39;ll start with the minor drawbacks. The &#39;end&#39; keyword for terminating blocks is prettier than a bracket, but fairly annoying for making one-liners. </span></p><p><span>I like named parameters for self-documenting code. Julia allows named parameters but naming them doesn&#39;t provide any flexibility with regard to their position when calling the function. </span></p><p><span>Julia&#39;s has 1-based array indexing by default. This fits my worldview, and you can even define some of your arrays to start at 0, but this flexibility does tend to cause bugs working with other people&#39;s code. This is compounded by Julia&#39;s pursuit of composability. If you cram your custom data value into someone else&#39;s function, and if it seems to be the right shape, it will probably work! Unless it doesn&#39;t. In that case you just get silently wrong answers. This is a deal-breaker for a lot of scientific computing people where Julia would otherwise shine.  </span></p><p><span>I also find Julia&#39;s errors to be fairly obtuse. And I see a lot of them because dynamic typing means the tools can&#39;t catch most errors before run-time. </span></p><p><span>But the big dealbreaker with Julia is it </span><em><span>only</span></em><span> complies on the fly. That means you can&#39;t just hand a compiled executable to someone. You must give them instructions to install Julia and all your dependencies first. That&#39;s no good for anything you want to ship like a desktop app or a game. You also don&#39;t want Julia on your server recompiling with every web request. </span></p><p><span>Like all compiled languages, the development cycle involves a lot of recompiling as you go. For small programs it doesn&#39;t matter, but this creeps up as the program grows -- or when you add a heavy dependency, like a plotting library. Julia suffers from this compiled-language drawback, but without the normal advantage of getting a compiled executable you could distribute. </span></p><p><span>Basically, Julia is the sexy sports car you can only drive at the track. </span></p><p><span>I wanted a &quot;daily driver&quot; that I could love for its beauty and speed, but that could also take me anywhere.</span></p><h2 id='c-1'><span>C# </span></h2><p><span>C# maybe? It has the full backing of Microsoft, but also mature open source options. You can make everything from desktop GUI apps to command line utilities. There&#39;s a decent enough data science ecosystem. You can develop for backend web. You can even develop front end web, via wasm. My past has involved some game programming, where C# is in heavy use. There&#39;s even a reinforcement learning environment for the Unity game engine that I was drooling to play with. C# seems like the go anywhere, do anything, language. </span></p><p><span>But, oh the semicolons. The curly braces. The syntax verbosity. The LongAssDictionaryWordFunctionNames(). For better or worse, this is a language born for enterprise IT departments. It&#39;s hard to feel happy grinding out a contrived LINQ expression for the same result as a &quot;practically English&quot; list comprehension in Python. The core language limits the kind of expressiveness that might confuse the next programmer who might inherit your code. But at the same time, C# has grown to become a kitchen sink of language features. The learning curve to grok any and all C# is steep. And the object-oriented roots run deep and date back to time before composition was preferred to inheritance. </span></p><p><span>Plus, if machine learning is an important use, then performance matters a lot. According to online benchmarks, C# is &quot;only&quot; 4x slower than the fastest compiled languages. But that&#39;s the difference between a 1-day and a 4-day iteration when tuning hyperparameters for machine learning. </span></p><p><span>My Yahtzeebot, after a &quot;line-by-line&quot; translation of the Julia version to C#, clocked in at 3 hours and 17 minutes. That&#39;s better than Python&#39;s 50 days, and I think I could have driven it lower. But it wasn&#39;t striking distance to Julia&#39;s ~3 minute run time. By now I was developing a rhythm for learning new languages and became determined to find &quot;the perfect&quot; one. </span></p><h2 id='swift'><span>Swift</span></h2><p><span>There was a big push a few years ago to adopt Swift in machine learning circles. For whatever reason, that effort stalled, but I wanted to see if it could fit my needs regardless. I knew Swift was a heavily funded and well documented language, given that it&#39;s backed by Apple. Like C#, it had a lot of possible applications for diverse uses. I could make mobile apps! At least for iOS. </span></p><p><span>As a compiled language, I assumed performance would be on par with Julia and Rust. </span></p><p><span>After using it, I found Swift to be more like C# than I expected, with many of its drawbacks. Verbosity. Legacy API baggage. And slow. </span></p><p><span>Slow? I thought Swift was an LLVM-compiled flavor-of-C kindof thing?</span></p><p><span>All I know is my &quot;line-by-line&quot; translation of Yahtzeebot for Swift ran for over 4 hours. I got that down to 1.5 hours after compiling with aggressive compiler flags that I scrounged off the internet. I didn&#39;t like that I couldn&#39;t selectively apply those optimizations </span><em><span>in code</span></em><span> like I could with Julia&#39;s </span><code>@inbounds</code><span> prefix for example. To the extent you can do this at all in Swift, you&#39;re really punished with parameter names like </span><code>unsafeUninitializedCapacity:...</code><span>. Yikes. I&#39;d need a wider monitor.  </span></p><p><span>API naming aside, Swift syntax is &quot;almost&quot; pretty. You do need curly braces but get to ditch semicolons. Variable types are mosty inferred. The syntax is less verbose than C# where Swift has less punctuation and constructor ceremony. The </span><code>x...y</code><span> syntax is handy for ranges. Loops in the style of </span><code>for object in collection</code><span> are typical versus looping indexes. It doesn&#39;t hurt my eyes too badly.</span></p><p><span>I was prepared to write some of my own machine learning &quot;library&quot; code. But I was surprised to find so little support for basic numerics in the standard library. If you want to </span><code>sum()</code><span> over an array without reduce, you write it yourself. Want </span><code>unique()</code><span> items from a list? Write it yourself, or reach for a package. It&#39;s cool that I can define my own operators, but do I really want to need my own </span><code>**</code><span> operator for ints so that </span><code>Int(pow(Float(x),Float(y))</code><span> can instead be </span><code>x**y</code><span>?</span></p><p><span>Some brave language design choices were made with Swift. Some of them were... not to my liking. You </span><em><span>must</span></em><span> name every parameter when calling a function (unless you shove underscores all around your function definitions). This feels unnecessary in world where you can have your IDE display the parameter names at the call site for you. </span></p><p><span>You can pass a closure body to the last parameter of a function with the </span><code>in</code><span> keyword. Cool, but why &quot;in&quot;? No idea. Mutable parameters were once designated with the var keyword (as in &quot;variable&quot; not fixed). But now it&#39;s been changed to </span><code>&amp;</code><span>. To me that smacks of just giving up and matching the obscure choices of legacy languages. </span></p><h2 id='c-2'><span>C</span></h2><p><span>Speaking of legacy languages... :) </span></p><p><span>By this point, I was feeling brave. I was polishing off new languages in weeks and had developed the opinion that, outside of stylistic choices, they&#39;re mostly the same. They all have some concept of a &quot;list&quot;, and a dictionary-like collection, probably some kind of JSON library if the need ever arose. Just slightly different vocabulary for the same stuff, right? I could probably learn C. Why not?</span></p><p><span>Holy wow. Where are my lists? Why must I pass length as a parameter to every single function? Pointers are arrays? Semicolons everywhere. Does no one make use of other people&#39;s code for anything? </span></p><p><span>My professional programming career of decades past had consisted of slinging GUI buttons on a form designer with with some database code sprinkled in. Back then, C was for the neckbeards in my department who hacked on printer drivers for fun. C was too close to the metal and too far from the user for my taste. C definitely wasn&#39;t something I was going to enjoy.  </span></p><p><span>But while re-making Yahtzeebot in C, it kinda grew on me? It&#39;s so fundamental and pure. There are only 32 keywords. You&#39;re intimately aware at every step that everything is just bytes of data somewhere in memory. How to interpret that is up to you. And you must. It&#39;s utterly painful to do &quot;simple things&quot;, but I learned to appreciate all the sugar in other languages. </span></p><p><span>The bugs in C are brutal. You feel lucky when your program crashes. The alternative is to puzzle over some inscrutable value your variable has adopted because you overwrote memory in some other location entirely. Finding these kinds of bugs is measured in days. </span></p><p><span>But C is the gold standard for fast. So fast. Yahtzeebot in 2.5 minutes. Raw power and papercuts at every step. It&#39;s empowering to realize I can dive in and see how Python itself was implemented. Battling with C shone a bright light on the unknowable mystery of the layers below me that I&#39;d been oblivious to for so long. </span></p><p><span>It was the hardest language to learn and I&#39;m glad I did it. But C won&#39;t be &quot;my&quot; language. I want to be productive and benefit from the many conveniences that modern languages enable. </span></p><p><span>If only there was a language with the speed of C and the elegance of Python. Surely, that&#39;s too much to hope for. Or is it?</span></p><h2 id='nim'><span>Nim</span></h2><p><span>Yes, this is where the journey ends. You&#39;ve probably never heard of Nim. There&#39;s no giant corporation behind it. Mostly it&#39;s been one dude hacking on this thing since 2008, supported by a handful of others. The community is tight. If you ask a question on the forum, the language creator may well reply. There&#39;s no way such a niche project could check every box on the &quot;perfect language&quot; list right? </span></p><p><span>Well, let me try to convince you.</span></p><p><span>Nim compiles to C, and it&#39;s just as fast. Yahtzeebot runs in </span><em><span>under</span></em><span> 2.5 minutes -- 6 seconds faster than my fastest hand-crafted C version. </span></p><p><span>That blows my mind, because Nim code reads like Python. It&#39;s a language I could teach my kids. There is no noisy extra crap all over everywhere -- just the intent of your code, plainly described. You look at it, and it does what you expect. </span></p><p><span>At the same time, it gives you great power. For example, you can write a section of Nim code that transforms other Nim code at compile time. You can do this with some simple substitution using a Nim template, or carve right into the abstract syntax tree with a Nim macro. (This is best used sparingly, but hints at the flexibility.) </span></p><p><span>Because Nim compiles to C on its way to a fully distributable binary, it leverages the highly tuned compiler ecosystem for C and it runs everywhere. You can make slim binaries that run on tiny embedded devices. That&#39;s crazy for a language that reads like Python. </span></p><p><span>You can also &quot;drop down&quot; and write a block of C code right inside of a Nim file and it all compiles together. I thought this would be super useful for performance-critical code, but I never needed it. Nim is just that fast already. If you don&#39;t need portability, you can even drop down to Assembly.</span></p><p><span>Nim gives you all this raw speed, but it doesn&#39;t make you reinvent basic data structures like C . You get all the conveniences of a modern programming language and then some: Yes to lists (whew). Also, dictionaries, exception handling, type inference, first class functions, custom operators, custom iterators, named parameters, variadic function arguments, hot code reloading support, and a modern garbage collector (which is strictly optional in case you want to manage memory by hand). Nim comes with a detachable batteries-included standard library, and a good package manager. There&#39;s a pretty spry package ecosystem that covers machine learning foundations, scientific computing, game development, desktop apps, and web development for both the server and the frontend. </span></p><p><span>Wait, Nim on the frontend? Did I mention Nim can also compile to JavaScript? In this capacity, it acts like an alternative to TypeScript. You can drive other web frameworks written in JavaScript, or choose one of several in pure Nim.</span></p><p><span>Nim speaks easily to other languages. You can import and use any C library. It&#39;s also shockingly easy to drive Python code, which gives access to the all its great packages. Matplotlib is at your disposal. There&#39;s a similar bridge to Julia that I haven&#39;t tried. In addition to C and JavaScript, Nim supports compiling to C++ or Objective-C. As expected, it&#39;s easy to interop with libraries written in those languages too. </span></p><p><span>There are also many little language niceties... too many to list them all here. But just to give you a taste...</span></p><ul><li><p><span>You can declare your arrays to start at 1 if that&#39;s your thing. But they&#39;re typed as such, so you won&#39;t accidently hand a 1-based array to a function that expects 0-based, as in Julia. </span></p></li><li><p><span>Inside every function you can return a value by assigning to the special variable &quot;result&quot;. In practice this makes many 3-line functions into 1-liners. </span></p></li><li><p><span>Nim guides you toward making value-objects by default. These live on the stack and benefit from better performance versus the more typical &quot;box all the things&quot; approach of Java and other languages.  </span></p></li><li><p><span>Like Swift, you can pass the body of a procedure to the last parameter of function which takes a closure there. This enables some nice API options. </span></p></li><li><p><span>You don&#39;t have to decide between snake_case or camelCase. You can define your variable either way and both references will work. Ditto for most cases of capitalization. I thought this might be problematic, but in practice it&#39;s brilliant. I think that sentiment applies to many of Nim&#39;s unexpected design choices. </span></p></li><li><p><span>Another in that category: You can choose to call your function like </span><code>add(a,b)</code><span>, but also like </span><code>a.add(b)</code><span> or even </span><code>a.add b</code><span>. While not immediately apparent, this helps improve readability in different scenarios. </span></p></li></ul><p><span>There&#39;s even a little-known REPL called INim that supports the kind of REPL-driven workflow that I learned to like in Julia. Because of this, I haven&#39;t much used the Nim kernel for Jupyter notebooks, but that option exists. </span></p><p><span>Now I would be somewhat remiss not to mention Nim&#39;s drawbacks, as I see them. </span></p><p><span>You might wish for a package that hasn&#39;t been written yet, or find that the best candidate hasn&#39;t been updated in a while. The excellent language interop helps here. There&#39;s probably a C library or a Python package that you can easily use.</span></p><p><span>Similarly, you won&#39;t for sure find a Stack Overflow entry that solves the exact problem you&#39;re facing. I imagine this is what the Python ecosystem might have been like back when Guido could have answered your question over IRC. </span></p><p><span>The Nim tooling is a little lacking in some areas. There&#39;s a plugin for VSCode that gives you autocomplete and refactoring support. But sometimes the refactoring just doesn&#39;t work and you have to fall back on search/replace. You do get reliable break-point debugging for stepping through your Nim code. But behind the scenes it&#39;s really debugging the intermediate C code. So the variable names you&#39;re shown for inspection are mangled versions of the originals. On Mac, you&#39;ll need to discover and configure &quot;lldbnim.py&quot; in your IDE or the mangling is worse. Lastly, the debugger sometimes insists on stepping into library code when you really want to focus on just your own.  I anticipate things here will improve.</span></p><p><span>The order of your function declarations do matter, so you can&#39;t make reference to a function defined below the one you&#39;re working on.  There&#39;s an experimental feature to fix this that doesn&#39;t always work, but you can always write a forward declaration as a last resort. </span></p><p><span>I haven&#39;t found a way to program the GPU in Nim, but I think this might be possible for a package to enable this through some combination of macros and a possible CUDA integration. </span></p><p><span>Like Python, indentation matters, so I can&#39;t indent a bunch of code under a comment heading then collapse that in my editor. The style guide says to indent with two space. Sorry, but I&#39;m sticking to four. </span></p><p><span>Nim is definitely a language with a lot of features, so it takes a while to learn them all. There are many pragmas. Everything isn&#39;t critical to learn. But then if you&#39;re diving into other people&#39;s code you may find stuff you don&#39;t recognize.</span></p><h2 id='punchline'><span>Punchline</span></h2><p><span>So why aren&#39;t more people using Nim? I don&#39;t know! </span></p><p><span>It&#39;s the closest thing to a perfect language that I&#39;ve used by far.</span></p><p><span>I hope you&#39;ll try it. Maybe you&#39;ll write a package that helps to define Nim in the way Rails did for Ruby. Those opportunities still exist, and we&#39;d love to have you.  </span></p><p>&nbsp;</p><p><span>ps. My </span><a href='https://github.com/mode80/nimzbot/blob/master/yahtzbot.nim'><span>Yahtzeebot</span></a><span> Nim code is on Github. I dare you to make it faster. ;)  </span></p></div></div>
+</body>
+</html>

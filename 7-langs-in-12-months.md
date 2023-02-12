@@ -2,7 +2,7 @@
 
 I began last year with a goal to *really* understand machine learning. I feel utterly lucky to be alive at a time when software is taking its first tentative steps into the realm of intelligence, and I want front row seats to this historic event. Once this has occurred, computers will speak my language. But to see it unfold, I must learn to speak theirs...
 
-By way of background, I haven't programmed professionally since the late 90s. My language of choice at that time is too embarrassing to admit (hint, initials  VB). Since then, I've been mostly busy helping earlystage start-ups get funded. So what follows is an "outsider's" inside perspective on the *very best* programming language. 
+By way of background, I haven't programmed professionally since the late 90s. My language of choice at that time is too embarrassing to admit (hint, initials  VB). Since then, I've been mostly busy helping early stage start-ups get funded. So what follows is an "outsider's" inside perspective on the *very best* programming language. 
 
 Yes, fighting words! Let's begin. 
 
@@ -15,7 +15,7 @@ But Python is slow. And being slow, it requires libraries written in C to do any
 
 Also, I wasn't *truly* understanding machine learning with Python. It was a string of incantations...import this module, paste in some torchured API calls, and behold... digits deciphered! I needed to see the guts.
 
-I did take Jeremy Howard's [excellent course](https://www.fast.ai/posts/part2-2022.html) which aims to teach building [Stable Diffusion](https://stablediffusionweb.com/) from scratch with Python. That seemed perfect. But I found, while I could readily nod my head watching Jeremy walk through the code, that wasn't enough for me to *really* understand. I decided I would need to re-implement it from scratch and "without peeking". But to see what to implement, I had to peek. Hm. I know, I'll re-write it in a different language!
+I did take Jeremy Howard's [excellent course](https://www.fast.ai/posts/part2-2022.html) which aims to teach building Stable Diffusion from scratch with Python. That seemed perfect. But I found, while I could readily nod my head watching Jeremy walk through the code, that wasn't enough for me to *really* understand. I decided I would need to re-implement it from scratch and "without peeking". But to see what to implement, I had to peek. Hm. I know, I'll re-write it in a different language!
 
 ## Rust
 
@@ -90,11 +90,11 @@ I wanted a "daily driver" that I could love for its beauty and speed, but that c
 
 ## C# 
 
-C# maybe? It has the full backing of Microsoft, but also mature open source alternatives. You can make everything from desktop GUI apps to command line utilities. There's a decent enough data science ecosystem. You can develop for backend web. You can even develop front end web, via wasm. My past has involved some game programming, where C# is in heavy use. There's even a reinforcement learning environment for the Unity game engine that I was drooling to play with. C# seems like the go anywhere, do anything, language. 
+C# maybe? It has the full backing of Microsoft, but also mature open source options. You can make everything from desktop GUI apps to command line utilities. There's a decent enough data science ecosystem. You can develop for backend web. You can even develop front end web, via wasm. My past has involved some game programming, where C# is in heavy use. There's even a reinforcement learning environment for the Unity game engine that I was drooling to play with. C# seems like the go anywhere, do anything, language. 
 
-But, oh the semicolons. The curly braces. The syntax verbosity. The LongAssDictionaryWordFunctionNames(). For better or worse, this is a language born for enterprise IT departments. It's hard to feel happy grinding out a contrived LINQ expression for the same result as an "almost English" list comprehension in Python. The core language limits the kind of expressiveness that might confuse the next programmer who might inherit your code. But at the same time, C# has grown to become a kitchen sink of language features. The learning curve to grok any and all C# is steep. And the object-oriented roots run deep and date back to time before composition was preferred to inheritance. 
+But, oh the semicolons. The curly braces. The syntax verbosity. The LongAssDictionaryWordFunctionNames(). For better or worse, this is a language born for enterprise IT departments. It's hard to feel happy grinding out a contrived LINQ expression for the same result as a "practically English" list comprehension in Python. The core language limits the kind of expressiveness that might confuse the next programmer who might inherit your code. But at the same time, C# has grown to become a kitchen sink of language features. The learning curve to grok any and all C# is steep. And the object-oriented roots run deep and date back to time before composition was preferred to inheritance. 
 
-Plus, if machine learning is the primary use, then performance matters a lot. According to online benchmarks, C# is "only" 4x slower than the fastest compiled languages. But that's the difference between a 1-day and a 4-day iteration when tuning hyperparameters for machine learning. 
+Plus, if machine learning is an important use, then performance matters a lot. According to online benchmarks, C# is "only" 4x slower than the fastest compiled languages. But that's the difference between a 1-day and a 4-day iteration when tuning hyperparameters for machine learning. 
 
 My Yahtzeebot, after a "line-by-line" translation of the Julia version to C#, clocked in at 3 hours and 17 minutes. That's better than Python's 50 days, and I think I could have driven it lower. But it wasn't striking distance to Julia's ~3 minute run time. By now I was developing a rhythm for learning new languages and became determined to find "the perfect" one. 
 
@@ -109,11 +109,11 @@ After using it, I found Swift to be more like C# than I expected, with many of i
 
 Slow? I thought Swift was an LLVM-compiled flavor-of-C kindof thing?
 
-All I know is my "line-by-line" translation of Yahtzeebot for Swift ran for over 4 hours. I got that down to 1.5 hours after compiling with aggressive compiler flags that I scrounged off the internet. I didn't like that I couldn't selectively apply those optimizations *in code* like I could with Julia's `@inbounds` prefix for example. To the extent you can do this at all in Swift, you're really punished with parameter names like `unsafeUninitializedCapacity:...`. Whew. I'd need a wider monitor.  
+All I know is my "line-by-line" translation of Yahtzeebot for Swift ran for over 4 hours. I got that down to 1.5 hours after compiling with aggressive compiler flags that I scrounged off the internet. I didn't like that I couldn't selectively apply those optimizations *in code* like I could with Julia's `@inbounds` prefix for example. To the extent you can do this at all in Swift, you're really punished with parameter names like `unsafeUninitializedCapacity:...`. Yikes. I'd need a wider monitor.  
 
 API naming aside, Swift syntax is "almost" pretty. You do need curly braces but get to ditch semicolons. Variable types are mosty inferred. The syntax is less verbose than C# where Swift has less punctuation and constructor ceremony. The `x...y` syntax is handy for ranges. Loops in the style of `for object in collection` are typical versus looping indexes. It doesn't hurt my eyes too badly.
 
-I was prepared to write some of my own machine learning "library" code. But I was surprised to find so little support for basic numerics in the standard library. If you want to `sum()` over an array without reduce, you write it yourself. Want `unique()` items from a list? Write it yourself, or reach for a package. It's cool that I can define my own operators, but do I really want to craft my own `**` operator for ints so that `Int(pow(Float(x),Float(y))` can instead be `x**y`?
+I was prepared to write some of my own machine learning "library" code. But I was surprised to find so little support for basic numerics in the standard library. If you want to `sum()` over an array without reduce, you write it yourself. Want `unique()` items from a list? Write it yourself, or reach for a package. It's cool that I can define my own operators, but do I really want to need my own `**` operator for ints so that `Int(pow(Float(x),Float(y))` can instead be `x**y`?
 
 Some brave language design choices were made with Swift. Some of them were... not to my liking. You _must_ name every parameter when calling a function (unless you shove underscores all around your function definitions). This feels unnecessary in world where you can have your IDE display the parameter names at the call site for you. 
 
@@ -130,7 +130,7 @@ Holy wow. Where are my lists? Why must I pass length as a parameter to every sin
 
 My professional programming career of decades past had consisted of slinging GUI buttons on a form designer with with some database code sprinkled in. Back then, C was for the neckbeards in my department who hacked on printer drivers for fun. C was too close to the metal and too far from the user for my taste. C definitely wasn't something I was going to enjoy.  
 
-But while re-making Yahtzeebot in C, it kinda grew on me? It's so fundamental and pure. There are only 32 keywords. You're intimately aware at every step that everything is just bytes of data somewhere in memory. How to interpret that is up to you. And you must. It's utterly painful to do "simple things", but I learned to appreciate the sugar in other languages. 
+But while re-making Yahtzeebot in C, it kinda grew on me? It's so fundamental and pure. There are only 32 keywords. You're intimately aware at every step that everything is just bytes of data somewhere in memory. How to interpret that is up to you. And you must. It's utterly painful to do "simple things", but I learned to appreciate all the sugar in other languages. 
 
 The bugs in C are brutal. You feel lucky when your program crashes. The alternative is to puzzle over some inscrutable value your variable has adopted because you overwrote memory in some other location entirely. Finding these kinds of bugs is measured in days. 
 
@@ -154,13 +154,13 @@ At the same time, it gives you great power. For example, you can write a section
 
 Because Nim compiles to C on its way to a fully distributable binary, it leverages the highly tuned compiler ecosystem for C and it runs everywhere. You can make slim binaries that run on tiny embedded devices. That's crazy for a language that reads like Python. 
 
-You can also "drop down" and write a block of C code right inside of a Nim file and it all compiles together. I thought this would be super useful for performance-critical code, but I never needed it. Nim is just that fast already. (And if you don't need portability, you can even drop down to Assembly.) 
+You can also "drop down" and write a block of C code right inside of a Nim file and it all compiles together. I thought this would be super useful for performance-critical code, but I never needed it. Nim is just that fast already. If you don't need portability, you can even drop down to Assembly.
 
 Nim gives you all this raw speed, but it doesn't make you reinvent basic data structures like C . You get all the conveniences of a modern programming language and then some: Yes to lists (whew). Also, dictionaries, exception handling, type inference, first class functions, custom operators, custom iterators, named parameters, variadic function arguments, hot code reloading support, and a modern garbage collector (which is strictly optional in case you want to manage memory by hand). Nim comes with a detachable batteries-included standard library, and a good package manager. There's a pretty spry package ecosystem that covers machine learning foundations, scientific computing, game development, desktop apps, and web development for both the server and the frontend. 
 
 Wait, Nim on the frontend? Did I mention Nim can also compile to JavaScript? In this capacity, it acts like an alternative to TypeScript. You can drive other web frameworks written in JavaScript, or choose one of several in pure Nim.
 
-Nim speaks easily to other languages. It's easy to import and use any C library. It's also shockingly easy to drive Python code, which gives access to the all the great packages in the Python ecosystem. There's a similar bridge to Julia that I haven't tried. In addition to C and JavaScript, Nim supports compiling to C++ or Objective-C. As expected, it's easy to interop with libraries written in those languages too. 
+Nim speaks easily to other languages. You can import and use any C library. It's also shockingly easy to drive Python code, which gives access to the all its great packages. Matplotlib is at your disposal. There's a similar bridge to Julia that I haven't tried. In addition to C and JavaScript, Nim supports compiling to C++ or Objective-C. As expected, it's easy to interop with libraries written in those languages too. 
 
 There are also many little language niceties... too many to list them all here. But just to give you a taste...
 
@@ -168,13 +168,13 @@ There are also many little language niceties... too many to list them all here. 
 
 - Inside every function you can return a value by assigning to the special variable "result". In practice this makes many 3-line functions into 1-liners. 
 
-- Nim guides you toward making value-objects by default. These live on the stack and benefit from better performance versus the more typical "box all the things" approach of other languages.  
+- Nim guides you toward making value-objects by default. These live on the stack and benefit from better performance versus the more typical "box all the things" approach of Java and other languages.  
 
 - Like Swift, you can pass the body of a procedure to the last parameter of function which takes a closure there. This enables some nice API options. 
 
 - You don't have to decide between snake_case or camelCase. You can define your variable either way and both references will work. Ditto for most cases of capitalization. I thought this might be problematic, but in practice it's brilliant. I think that sentiment applies to many of Nim's unexpected design choices. 
 
-- Another in that category: You can choose to call your function like `add(a,b)`, but also like `a.add(b)` or even `a.add b`. While not immediately apparent, this helps improve readability for difference scenarios. 
+- Another in that category: You can choose to call your function like `add(a,b)`, but also like `a.add(b)` or even `a.add b`. While not immediately apparent, this helps improve readability in different scenarios. 
 
 There's even a little-known REPL called INim that supports the kind of REPL-driven workflow that I learned to like in Julia. Because of this, I haven't much used the Nim kernel for Jupyter notebooks, but that option exists. 
 
@@ -184,7 +184,7 @@ You might wish for a package that hasn't been written yet, or find that the best
 
 Similarly, you won't for sure find a Stack Overflow entry that solves the exact problem you're facing. I imagine this is what the Python ecosystem might have been like back when Guido could have answered your question over IRC. 
 
-The Nim tooling is a little lacking in some areas. There's a plugin for VSCode that gives you autocomplete and refactoring support. But sometimes the refactoring just doesn't work and you have to fall back on search/replace. You do get reliable break-point debugging for stepping through your Nim code. But behind the scenes it's really debugging the intermediate C code. So the variable names you're shown for inspection are mangled versions of the originals. Plus there's some extra stuff mixed in there from the underlying C. On Mac, you'll need to discover and configure "lldbnim.py" in your IDE or the mangling is worse. Lastly, the debugger sometimes insists on stepping into library code when you really want to focus on just your own.  
+The Nim tooling is a little lacking in some areas. There's a plugin for VSCode that gives you autocomplete and refactoring support. But sometimes the refactoring just doesn't work and you have to fall back on search/replace. You do get reliable break-point debugging for stepping through your Nim code. But behind the scenes it's really debugging the intermediate C code. So the variable names you're shown for inspection are mangled versions of the originals. On Mac, you'll need to discover and configure "lldbnim.py" in your IDE or the mangling is worse. Lastly, the debugger sometimes insists on stepping into library code when you really want to focus on just your own.  I anticipate things here will improve.
 
 The order of your function declarations do matter, so you can't make reference to a function defined below the one you're working on.  There's an experimental feature to fix this that doesn't always work, but you can always write a forward declaration as a last resort. 
 
@@ -192,7 +192,7 @@ I haven't found a way to program the GPU in Nim, but I think this might be possi
 
 Like Python, indentation matters, so I can't indent a bunch of code under a comment heading then collapse that in my editor. The style guide says to indent with two space. Sorry, but I'm sticking to four. 
 
-Nim is definitely a language with a lot of features, so it takes a while to learn them all. There are many pragmas. Mostly these are optional niceties. But then if you're diving into other people's code you may find stuff you don't recognize.
+Nim is definitely a language with a lot of features, so it takes a while to learn them all. There are many pragmas. Everything isn't critical to learn. But then if you're diving into other people's code you may find stuff you don't recognize.
 
 
 ## Punchline
@@ -205,4 +205,4 @@ I hope you'll try it. Maybe you'll write a package that helps to define Nim in t
 
 
 
-ps. My Yahtzeebot Nim code is on Github. I dare you to make it faster. ;)  
+ps. My [Yahtzeebot](https://github.com/mode80/nimzbot/blob/master/yahtzbot.nim) Nim code is on Github. I dare you to make it faster. ;)  
