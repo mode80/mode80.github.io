@@ -1,4 +1,4 @@
-# I learned 7 different programming languages -- so you don't have to
+# I learned 7 different programming languages so you don't have to
 
 I began last year with a goal to *really* understand machine learning. I feel utterly lucky to be alive at a time when software is taking its first tentative steps into the realm of intelligence, and I want front row seats to this historic event. Once this has occurred, computers will speak my language. But to see it unfold, I must learn to speak theirs...
 
