@@ -19,7 +19,7 @@ I did take Jeremy Howard's [excellent course](https://www.fast.ai/posts/part2-20
 
 ## Rust
 
-Enter Rust. Rust is what all the cool kids are learning. It's been voted the "most loved" language by programmers for many years. Surely, I should learn this one. But it would be a lot to learn a new language together with machine learning at the same. So I took a step back and decided to learn just Rust, by re-implementing something I'd already written once in Python. 
+Enter Rust. Rust is what all the cool kids are learning. It's been voted the "most loved" language by programmers for many years. Surely, I should learn this one. But it would be a lot to learn a new language together with machine learning at the same time. So I took a step back and decided to learn just Rust, by re-implementing something I'd already written once in Python. 
 
 ### Sidebar: The best way to learn a language
 
@@ -38,7 +38,7 @@ So what's up with Rust? Well, I can't say it's my "most loved".
 
 It taught me appreciation for low level implementation details I'd never had to think about before. But I didn't really want to think about those things. For example, Rust made me responsible for managing "lifetimes" of my variables by way of noisy annotations. I was used to languages that take care of this logistical plumbing for me. It'd be nice to "opt-in" to that level of control when it's needed, but Rust always needs it. 
 
-I will say there's a certain satisfaction every time I got new code to compile in Rust. It feels like solving a puzzle. And a bonus, the strict rules of Rust allow my IDE to highlight errors as I go. When your Python program runs, you don't really know it's correct until you've tested every code path. 
+I will say there's a certain satisfaction every time I got new code to compile in Rust. It feels like solving a puzzle. As a bonus, the strict rules of Rust allow my IDE to highlight errors as I go. When your Python program runs, you don't really know it's correct until you've tested every code path. 
 
 But Rust is pedantic in other ways which takes that a bit too far for my taste. There is so much defensive error checking and/or value "unwrapping". It's hard to tease all that apart from the core of a programmer's intent. My brain has a "complexity limit", and if I'm using some of that up to parse through the plumbing, it shrinks the limit of "problem complexity" I can tackle. 
 
@@ -79,7 +79,7 @@ Julia's has 1-based array indexing by default. This fits my worldview, and you c
 
 I also find Julia's errors to be fairly obtuse. And I see a lot of them because dynamic typing means the tools can't catch most errors before run-time. 
 
-But the big dealbreaker with Julia is it *only* complies on the fly. That means you can't just hand a compiled executable to someone. You must give them instructions to install Julia and all your dependencies first. That's no good for anything you want to ship like a desktop app or a game. You also don't want Julia on your server recompiling with every web request. 
+But the big dealbreaker with Julia is it *only* compiles on the fly. That means you can't just hand a compiled executable to someone. You must give them instructions to install Julia and all your dependencies first. That's no good for anything you want to ship like a desktop app or a game. You also don't want Julia on your server recompiling with every web request. 
 
 Like all compiled languages, the development cycle involves a lot of recompiling as you go. For small programs it doesn't matter, but this creeps up as the program grows -- or when you add a heavy dependency, like a plotting library. Julia suffers from this compiled-language drawback, but without the normal advantage of getting a compiled executable you could distribute. 
 
@@ -92,7 +92,7 @@ I wanted a "daily driver" that I could love for its beauty and speed, but that c
 
 C# maybe? It has the full backing of Microsoft, but also mature open source options. You can make everything from desktop GUI apps to command line utilities. There's a decent enough data science ecosystem. You can develop for backend web. You can even develop front end web, via wasm. My past has involved some game programming, where C# is in heavy use. There's even a reinforcement learning environment for the Unity game engine that I was drooling to play with. C# seems like the go anywhere, do anything, language. 
 
-But, oh the semicolons. The curly braces. The syntax verbosity. The LongAssDictionaryWordFunctionNames(). For better or worse, this is a language born for enterprise IT departments. It's hard to feel happy grinding out a contrived LINQ expression for the same result as a "practically English" list comprehension in Python. The core language limits the kind of expressiveness that might confuse the next programmer who might inherit your code. But at the same time, C# has grown to become a kitchen sink of language features. The learning curve to grok any and all C# is steep. And the object-oriented roots run deep and date back to time before composition was preferred to inheritance. 
+But, oh the semicolons. The curly braces. The syntax verbosity. The LongAssDictionaryWordFunctionNames(). For better or worse, this is a language born for enterprise IT departments. It's hard to feel happy grinding out a contrived LINQ expression for the same result as a "practically English" list comprehension in Python. The core language limits the kind of expressiveness that might confuse the next programmer who might inherit your code. But at the same time, C# has grown to become a kitchen sink of language features. The learning curve to grok any and all C# is steep. And the object-oriented roots run deep and date back to a time before composition was preferred to inheritance. 
 
 Plus, if machine learning is an important use, then performance matters a lot. According to online benchmarks, C# is "only" 4x slower than the fastest compiled languages. But that's the difference between a 1-day and a 4-day iteration when tuning hyperparameters for machine learning. 
 
@@ -128,7 +128,7 @@ By this point, I was feeling brave. I was polishing off new languages in weeks a
 
 Holy wow. Where are my lists? Why must I pass length as a parameter to every single function? Pointers are arrays? Semicolons everywhere. Does no one make use of other people's code for anything? 
 
-My professional programming career of decades past had consisted of slinging GUI buttons on a form designer with with some database code sprinkled in. Back then, C was for the neckbeards in my department who hacked on printer drivers for fun. C was too close to the metal and too far from the user for my taste. C definitely wasn't something I was going to enjoy.  
+My professional programming career of decades past had consisted of slinging GUI buttons on a form designer with some database code sprinkled in. Back then, C was for the neckbeards in my department who hacked on printer drivers for fun. C was too close to the metal and too far from the user for my taste. C definitely wasn't something I was going to enjoy.  
 
 But while re-making Yahtzeebot in C, it kinda grew on me? It's so fundamental and pure. There are only 32 keywords. You're intimately aware at every step that everything is just bytes of data somewhere in memory. How to interpret that is up to you. And you must. It's utterly painful to do "simple things", but I learned to appreciate all the sugar in other languages. 
 
@@ -160,7 +160,7 @@ Nim gives you all this raw speed, but it doesn't make you reinvent basic data st
 
 Wait, Nim on the frontend? Did I mention Nim can also compile to JavaScript? In this capacity, it acts like an alternative to TypeScript. You can drive other web frameworks written in JavaScript, or choose one of several in pure Nim.
 
-Nim speaks easily to other languages. You can import and use any C library. It's also shockingly easy to drive Python code, which gives access to the all its great packages. Matplotlib is at your disposal. There's a similar bridge to Julia that I haven't tried. In addition to C and JavaScript, Nim supports compiling to C++ or Objective-C. As expected, it's easy to interop with libraries written in those languages too. 
+Nim speaks easily to other languages. You can import and use any C library. It's also shockingly easy to drive Python code, which gives access to all its great packages. Matplotlib is at your disposal. There's a similar bridge to Julia that I haven't tried. In addition to C and JavaScript, Nim supports compiling to C++ or Objective-C. As expected, it's easy to interop with libraries written in those languages too. 
 
 There are also many little language niceties... too many to list them all here. But just to give you a taste...
 
